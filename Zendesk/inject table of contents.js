@@ -31,3 +31,11 @@ if ($('.article-body span.wysiwyg-font-size-x-large').length > 2) {
       .append('<li><a href="#' + toc[index] + '">' + toc[index] + '</a></li>');
   });
 }
+
+// add smooth scroll 
+$('a[href^="#"]:not(a[href="#"])').click(function(){
+        $('html, body').animate({
+            scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+        }, 500);
+        return false;
+});
